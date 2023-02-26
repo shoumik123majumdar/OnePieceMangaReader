@@ -5,7 +5,7 @@ import time
 
 driver = webdriver.Chrome()
 driver.get("https://claystage.com/one-piece-chapter-release-schedule-for-2023")
-time.sleep(5)
+time.sleep(2)
 
 weeksList = []
 chapterList = []
@@ -18,10 +18,12 @@ for i in range(1,53):
     xPath = '//*[@id="post-3990"]/div/div[2]/figure/table/tbody/tr[' + str(i) + ']/td[3]'
     dateList.append(driver.find_element(By.XPATH,xPath).text)
 
-#df = pd.DataFrame(zip(weeksList,chapterList),)
-print(weeksList)
-print(chapterList)
-print(dateList)
+df = pd.DataFrame(zip(weeksList,chapterList,dateList),columns=['Weeks','Chapters',"Release Dates"])
+print(df)
+
+currentChapter = df._get_value(8,'Chapters')
+print(currentChapter)
+
 
 
 '''

@@ -7,6 +7,7 @@ chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
 global currentChapter
 currentChapter= 1076
 
+
 def addChapterNumber():
     global currentChapter
     currentChapter+=1
