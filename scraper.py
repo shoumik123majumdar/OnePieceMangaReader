@@ -16,11 +16,8 @@ for i in range(1,53):
     dateList.append(driver.find_element(By.XPATH,xPath).text)
 
 df = pd.DataFrame(zip(chapterList,dateList),columns=['Chapters',"Release Dates"])
-df.to_csv("ReleaseDates.csv")
 print(df)
 
-currentChapter = df._get_value(8,'Chapters')
-print(currentChapter)
 
 
 '''
