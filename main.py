@@ -36,6 +36,9 @@ while (isInput):
     chapterNumber = input(prompt)
     if (chapterNumber == "schedule"):
         print(database)
+    elif(chapterNumber == "iterate"):
+        addIndex()
+        currentChapter = database._get_value(currentChapterIndex, 'Chapters')
     elif (chapterNumber == "current"):
         isInput = False
     elif (chapterNumber.isnumeric()):
@@ -44,7 +47,7 @@ while (isInput):
         else:
             prompt = "Website doesn't support the chapter you selected, enter again:"
     else:
-        if (chapterNumber == "schedule"):
+        if (chapterNumber == "schedule" or chapterNumber == "iterate"):
             prompt = "Enter one piece chapter (1000 and up) or enter 'current' to go to said chapter:"
         else:
             prompt = "This is not an acceptable input, please try again:"
