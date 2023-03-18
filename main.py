@@ -2,7 +2,7 @@ import webbrowser
 import schedule
 import pandas as pd
 
-url = 'https://opscans.com/manga/72/vol-tbe-chapter-'
+url = 'https://opscans.com/manga/77/vol-tbe-chapter-'
 chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
 
 database = pd.read_csv('ReleaseDates.csv', index_col=None)
@@ -20,7 +20,7 @@ def addIndex():
         f.write(str(currentChapterIndex)+"\n")
 
 
-schedule.every().sunday.do(addIndex)
+schedule.every().friday.do(addIndex)
 
 global comparableChapter
 global currentChapter
@@ -60,7 +60,7 @@ if (chapterNumber == "current"):
         exit(code=0)
     url += str(currentChapter) + "/"
 elif int(chapterNumber) < int(comparableChapter) - 3:
-    url = 'https://opscans.com/manga/72/vol-tbe-ch-' + str(chapterNumber) + "/"
+    url = 'https://opscans.com/manga/77/vol-tbe-ch-' + str(chapterNumber) + "/"
 else:
     url += str(chapterNumber) + "/"
 
